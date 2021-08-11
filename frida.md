@@ -36,3 +36,13 @@ b[hj]=b[hj].replace(/;/g,"");
 });
 ```
 
+# frida调用 Android framework 的一个工具类进行hexdump，方便又快捷。
+```js
+function hexdump(bytearry,offset,length){
+      // bytearray => [B
+      // offset => I
+      // length => I
+      var HexDump = Java.use("com.android.internal.util.HexDump")
+      console.log(HexDump.dumpHexString(bytearry,offset,length))
+    }
+```
